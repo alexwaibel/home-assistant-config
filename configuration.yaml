@@ -1,0 +1,32 @@
+# ----------------
+# General settings
+# ----------------
+# Base home assistant configuration
+# used to bootstrap remaining configs.
+
+homeassistant:
+  currency: USD
+  elevation: !env_var HASS_ELEVATION 
+  name: Home
+  latitude: !env_var HASS_LATITUDE
+  longitude: !env_var HASS_LONGITUDE 
+  unit_system: imperial
+  time_zone: America/Los_Angeles
+
+  external_url: !env_var HASS_URL 
+  internal_url: !env_var HASS_URL
+
+  packages: !include_dir_named packages
+
+http:
+  server_host: 0.0.0.0
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !env_var HASS_TRUSTED_PROXIES_1
+    - !env_var HASS_TRUSTED_PROXIES_1
+
+frontend:
+history:
+logbook:

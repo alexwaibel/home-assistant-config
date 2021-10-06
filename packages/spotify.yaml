@@ -1,0 +1,8 @@
+# --------
+# Spotify
+# --------
+# Control Spotify playback 
+# https://www.home-assistant.io/integrations/spotify/
+spotify:
+  client_id: !env_var HASS_SPOTIFY_CLIENT_ID
+  client_secret: !env_var HASS_SPOTIFY_CLIENT_SECRET

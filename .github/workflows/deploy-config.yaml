@@ -15,3 +15,4 @@ jobs:
         uses: joelwmale/webhook-action@87f230c372975905ed19749b38b1ba6698c840c3
         with:
           url: ${{ secrets.WEBHOOK_URL }}
+          body: '{}'

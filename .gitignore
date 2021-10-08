@@ -14,6 +14,7 @@ __pycache__
 
 # Directory (contents) ignores
 /*.conf
+/.cloud
 /deps
 /.storage
 /tts

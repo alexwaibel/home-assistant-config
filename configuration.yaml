@@ -1,5 +1,5 @@
 # ----------------
-# General settings
+# General
 # ----------------
 # Base home assistant configuration
 # used to bootstrap remaining configs.
@@ -18,6 +18,11 @@ homeassistant:
 
   packages: !include_dir_named packages
 
+# ----------------
+# General http
+# ----------------
+# HTTP settings to handle serving files for frontend
+# https://www.home-assistant.io/integrations/http/
 http:
   server_host: 0.0.0.0
   ip_ban_enabled: true
@@ -27,6 +32,25 @@ http:
     - !env_var HASS_TRUSTED_PROXIES_1
     - !env_var HASS_TRUSTED_PROXIES_1
 
+# -----------------
+# Core integrations
+# -----------------
+# Manually import core integrations
+# https://www.home-assistant.io/integrations/default_config/
+cloud:
+config:
+dhcp:
 frontend:
 history:
+image:
+map:
+media_source:
+mobile_app:
+my:
 logbook:
+person:
+sun:
+system_health:
+tag:
+updater:
+zone:

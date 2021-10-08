@@ -1,0 +1,12 @@
+- alias: Update config
+  description: Fetches latest config from GitHub and applies it. Used by deployment pipeline.
+  id: cb040ee2-db1a-43c9-8ec8-b13d937a9e42
+  mode: restart
+  trigger:
+    - platform: webhook
+      webhook_id: 6a112146-567d-459f-b2ab-6c887c397f51
+      id: update-config
+
+  action:
+    - service: shell_command.update_config
+    - service: homeassistant.restart

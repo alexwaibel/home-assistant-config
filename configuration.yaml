@@ -6,14 +6,14 @@
 
 homeassistant:
   currency: USD
-  elevation: !env_var HASS_ELEVATION 
+  elevation: !env_var HASS_ELEVATION
   name: Home
   latitude: !env_var HASS_LATITUDE
-  longitude: !env_var HASS_LONGITUDE 
+  longitude: !env_var HASS_LONGITUDE
   unit_system: imperial
   time_zone: America/Los_Angeles
 
-  external_url: !env_var HASS_URL 
+  external_url: !env_var HASS_URL
   internal_url: !env_var HASS_URL
 
   packages: !include_dir_named packages
@@ -37,6 +37,7 @@ http:
 # -----------------
 # Manually import core integrations
 # https://www.home-assistant.io/integrations/default_config/
+automation: !include_dir_merge_list automations
 cloud:
 config:
 dhcp:
@@ -49,6 +50,7 @@ mobile_app:
 my:
 logbook:
 person:
+shell_command: !include_dir_merge_named shell_commands
 sun:
 system_health:
 tag:

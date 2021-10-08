@@ -1,0 +1,16 @@
+---
+name: Deploy config changes
+
+on: # yamllint disable-line rule:truthy
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Invoke deployment hook
+        uses: joelwmale/webhook-action@master
+        with:
+          url: ${{ secrets.WEBHOOK_URL }}

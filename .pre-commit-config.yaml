@@ -1,0 +1,31 @@
+---
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.0.1
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-merge-conflict
+      - id: check-vcs-permalinks
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.26.3
+    hooks:
+      - id: yamllint
+        args:
+          - --config-file
+          - .github/lint/.yamllint.yaml
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.7.1.1
+    hooks:
+      - id: shellcheck
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.29.0
+    hooks:
+      - id: markdownlint
+        args:
+          - --config
+          - .github/lint/.markdownlint.yaml

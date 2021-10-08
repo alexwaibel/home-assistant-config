@@ -5,6 +5,9 @@ on: # yamllint disable-line rule:truthy
   pull_request:
     paths:
       - "**.md"
+  push:
+    branches:
+      - main
 
 jobs:
   markdownlint:

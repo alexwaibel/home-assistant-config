@@ -6,6 +6,9 @@ on: # yamllint disable-line rule:truthy
     paths:
       - "**.yaml"
       - "**.yml"
+  push:
+    branches:
+      - main
 
 jobs:
   yamllint:

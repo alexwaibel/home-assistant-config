@@ -136,5 +136,5 @@ A big thanks to all the authors of the projects that make this setup possible.
 [issues-shield]: https://img.shields.io/github/issues/alexwaibel/home-assistant-config.svg?style=for-the-badge
 [issues-url]: https://github.com/alexwaibel/home-assistant-config/issues
 [license-shield]: https://img.shields.io/github/license/alexwaibel/home-assistant-config.svg?style=for-the-badge
-[license-url]: https://github.com/alexwaibel/home-assistant-config/blob/master/LICENSE.txt
+[license-url]: https://github.com/alexwaibel/home-assistant-config/blob/main/LICENSE.txt
 [product-screenshot]: images/screenshot.png

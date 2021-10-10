@@ -1,0 +1,16 @@
+---
+# -------------------------
+# Living Room Nvidia Shield
+# -------------------------
+# Control Nvidia Shield android TV
+# https://www.home-assistant.io/integrations/androidtv/
+platform: androidtv
+name: Living Room Nvidia Shield
+host: 192.168.3.10
+apps:
+  com.android.tv.settings: "Settings"
+state_detection_rules:
+  'com.android.tv.settings':
+    - 'idle'
+  'com.android.vending':
+    - 'idle'

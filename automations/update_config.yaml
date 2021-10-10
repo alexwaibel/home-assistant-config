@@ -1,6 +1,6 @@
 - alias: Update config
   description: Fetches latest config from GitHub and applies it. Used by deployment pipeline.
-  id: cb040ee2-db1a-43c9-8ec8-b13d937a9e42
+  id: 'cb040ee2-db1a-43c9-8ec8-b13d937a9e42'
   mode: restart
   trigger:
     - platform: webhook

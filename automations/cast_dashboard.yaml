@@ -1,0 +1,9 @@
+- alias: Cast dashboard to bedroom hub
+  description: Cast the Home Assistant dashboard to the bedroom display.
+  id: '1633737791954'
+  use_blueprint:
+    path: kind3r/cast-and-re-cast-a-lovelace-view-to-a-google-hub.yaml
+    input:
+      dashboard: lovelace
+      player: media_player.alex_s_bedroom_display
+      view: default_view

@@ -4,6 +4,5 @@
   use_blueprint:
     path: kind3r/cast-and-re-cast-a-lovelace-view-to-a-google-hub.yaml
     input:
-      dashboard: lovelace
       player: media_player.alex_s_bedroom_display
       view: default_view

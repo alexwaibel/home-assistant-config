@@ -5,6 +5,7 @@
 # Generic ignores
 *.log
 *.log.?
+*.log.fault
 *.db
 *.db-shm
 *.db-wal

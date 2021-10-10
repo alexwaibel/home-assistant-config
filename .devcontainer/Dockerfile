@@ -5,3 +5,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base:0-${UBUNTU_VERSION}
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt -y install --no-install-recommends npm pip
+
+RUN su vscode -c "sudo npm install -g markdownlint-cli \
+    && sudo pip install yamllint \
+    && sudo pip install pre-commit"

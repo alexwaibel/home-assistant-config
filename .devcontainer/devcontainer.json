@@ -34,9 +34,6 @@
 
 	// Run commands after the container is created.
 	"postCreateCommand": [
-		"npm install -g markdownlint-cli",
-		"pip install --user yamllint",
-		"pip install --user pre-commit",
 		"pre-commit install",
 	],
 

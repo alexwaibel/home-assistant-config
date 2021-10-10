@@ -1,7 +1,8 @@
+---
 # --------
 # Spotify
 # --------
-# Control Spotify playback 
+# Control Spotify playback
 # https://www.home-assistant.io/integrations/spotify/
 spotify:
   client_id: !env_var HASS_SPOTIFY_CLIENT_ID

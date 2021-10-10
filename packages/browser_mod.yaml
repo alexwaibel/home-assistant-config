@@ -1,0 +1,7 @@
+---
+# -----------
+# Browser Mod
+# -----------
+# Control Spotify playback
+# https://www.home-assistant.io/integrations/spotify/
+browser_mod:

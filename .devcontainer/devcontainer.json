@@ -10,6 +10,9 @@
 	// Set *default* container specific settings.json values on container create.
 	"settings": {
 		"diffEditor.ignoreTrimWhitespace": false,
+		"files.associations": {
+			"*.yaml": "home-assistant"
+		},
 		"git.autofetch": true,
 		"git.confirmSync": false,
 		"redhat.telemetry.enabled": false,

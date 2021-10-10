@@ -122,7 +122,7 @@ Distributed under the GPL License. See [LICENSE.md](LICENSE.md) for more informa
 
 A big thanks to all the authors of the projects that make this setup possible.
 
-* [Hyberion](https://docs.hyperion-project.org/)
+* [Hyperion](https://docs.hyperion-project.org/)
 * [Nabu Casa](https://www.nabucasa.com/)
 * [zigbee2mqtt](https://www.zigbee2mqtt.io/)
 * [zwavejs2mqtt](https://github.com/zwave-js/zwavejs2mqtt)

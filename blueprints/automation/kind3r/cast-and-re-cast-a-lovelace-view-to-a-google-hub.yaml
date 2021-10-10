@@ -19,6 +19,9 @@ blueprint:
       description: Path to lovelace. Defaults to 'lovelace' if empty.
       default: lovelace
   source_url: https://community.home-assistant.io/t/cast-and-re-cast-a-lovelace-view-to-a-google-hub/259631
+
+mode: restart
+
 trigger:
 - platform: state
   entity_id: !input 'player'
@@ -32,6 +35,7 @@ trigger:
   minutes: /9
 - platform: time_pattern
   minutes: '0'
+
 action:
 - choose:
   - conditions:

@@ -1,0 +1,11 @@
+# -----------------
+# Adaptive lighting
+# -----------------
+# Changes color of lights based on the position of the sun
+# https://github.com/basnijholt/adaptive-lighting
+adaptive_lighting:
+  lights:
+    - light.bedroom_dome_light_1
+    - light.bedroom_dome_light_2
+    - light.bedroom_dome_light_3
+    - light.living_room_lamp

@@ -1,0 +1,41 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.192.0/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+		"args": { "VARIANT": "focal" }
+	},
+
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"diffEditor.ignoreTrimWhitespace": false,
+		"git.autofetch": true,
+		"git.confirmSync": false,
+		"redhat.telemetry.enabled": false,
+		"workbench.colorTheme": "Material Theme Darker High Contrast",
+		"yaml.customTags": [
+			"!env_var",
+			"!include_dir_merge_list",
+			"!include_dir_merge_named",
+			"!include_dir_named",
+			"!input",
+			"!secret",
+		],
+	},
+
+	//  IDs of extensions to be installed when the container is created.
+	"extensions": [
+		"equinusocio.vsc-material-theme",
+		"equinusocio.vsc-material-theme-icons",
+		"keesschollaart.vscode-home-assistant",
+		"redhat.vscode-yaml",
+	],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "uname -a",
+
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}

@@ -1,0 +1,6 @@
+---
+unique_id: vacuum_sensors
+icon: custom:roborock-sensor
+unit_of_measurement: '%'
+state: >
+  {{ (state_attr('vacuum.roborock_s5_max', 'sensor_dirty_left') / 0.3) | round }}

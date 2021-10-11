@@ -1,0 +1,34 @@
+---
+# ---------
+# Lovelace
+# ---------
+# Configure Lovelace dashboards
+# https://www.home-assistant.io/lovelace
+lovelace:
+  mode: yaml
+  resources:
+    [
+      { url: /hacsfiles/bar-card/bar-card.js, type: module },
+      { url: /hacsfiles/button-card/button-card.js, type: module },
+      { url: /hacsfiles/kiosk-mode/kiosk-mode.js, type: module },
+      { url: /hacsfiles/light-entity-card/light-entity-card.js, type: module },
+      { url: /hacsfiles/light-popup-card/light-popup-card.js, type: module },
+      { url: /hacsfiles/lovelace-card-mod/card-mod.js, type: module },
+      { url: /hacsfiles/lovelace-layout-card/layout-card.js, type: module },
+      {
+        url: /hacsfiles/lovelace-slider-entity-row/slider-entity-row.js,
+        type: module,
+      },
+      {
+        url: /hacsfiles/lovelace-xiaomi-vacuum-map-card/xiaomi-vacuum-map-card.js,
+        type: module,
+      },
+      {
+        url: /hacsfiles/mini-graph-card/mini-graph-card-bundle.js,
+        type: module,
+      },
+      { url: /hacsfiles/swipe-card/swipe-card.js, type: module },
+      { url: "/local/calendar-card.js?v=3.109.1", type: module },
+      { url: "/local/custom_icons.js?v=28082021", type: module },
+      { url: /local/font.css, type: css },
+    ]

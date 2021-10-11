@@ -1,0 +1,9 @@
+---
+# ----------
+# Templates
+# ----------
+# Templates to format data into human readable messages
+# https://www.home-assistant.io/docs/configuration/templating/
+template:
+  select: !include_dir_list ../templates/select
+  sensor: !include_dir_list ../templates/sensors

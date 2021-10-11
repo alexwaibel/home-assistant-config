@@ -1,0 +1,6 @@
+---
+unique_id: vacuum_lastclean
+icon: mdi:calendar-clock
+device_class: timestamp
+state: >
+  {{ state_attr('vacuum.roborock_s5_max', 'clean_stop') | replace(' ','T') }}

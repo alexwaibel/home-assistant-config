@@ -1,0 +1,6 @@
+---
+unique_id: vacuum_sidebrush
+icon: custom:roborock-sidebrush
+unit_of_measurement: '%'
+state: >
+  {{ (state_attr('vacuum.roborock_s5_max', 'side_brush_left') / 2) | round }}

@@ -59,9 +59,9 @@ This repository contains the full configuration for my Home Assistant instance r
 
 Below are instructions for setting up your development environment. I use a container running [code-server](https://github.com/cdr/code-server) with access to the volume storing my config.
 
-1. Access code-server via browser
+1. Open this configuration using the code-server container or GitHub codespaces
 1. Make changes to configuration
-1. Use the Home Assistant UI to validate the config
+1. Use the Home Assistant UI or VS Code extension to validate the config
 1. Reboot Home Assistant via UI to apply changes
 
 ### Prerequisites
@@ -122,7 +122,9 @@ Distributed under the GPL License. See [LICENSE.md](LICENSE.md) for more informa
 
 A big thanks to all the authors of the projects that make this setup possible.
 
+* [HACS](https://hacs.xyz/)
 * [Hyperion](https://docs.hyperion-project.org/)
+* [matt8707's HASS config](https://github.com/matt8707/hass-config)
 * [Nabu Casa](https://www.nabucasa.com/)
 * [zigbee2mqtt](https://www.zigbee2mqtt.io/)
 * [zwavejs2mqtt](https://github.com/zwave-js/zwavejs2mqtt)

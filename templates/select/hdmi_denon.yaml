@@ -1,0 +1,19 @@
+---
+name: hdmi_denon
+state: >
+  {% set entity_id = 'media_player.denon_avr_s750h' %}
+  {% if state_attr(entity_id, 'source') == None %}
+    {{ state_attr(entity_id, 'source_list')[1] }}
+  {% else %}
+    {{ state_attr(entity_id, 'source') }}
+  {% endif %}
+options: >
+  {% set entity_id = 'media_player.denon_avr_s750h' %}
+  {{ (state_attr(entity_id, 'source_list')[0], state_attr(entity_id, 'source_list')[1], 'PC', 'Phono', 'PS4', 'Shield', 'Switch', 'TV Audio') | list }}
+select_option:
+  service: media_player.select_source
+  target:
+    entity_id: media_player.denon_avr_s750h
+  data:
+    source: >
+      {{ option }}

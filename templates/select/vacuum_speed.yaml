@@ -1,0 +1,13 @@
+---
+name: vacuum_speed
+state: >
+  {{ state_attr('vacuum.roborock_s5_max', 'fan_speed') }}
+options: >
+  {{ state_attr('vacuum.roborock_s5_max', 'fan_speed_list') }}
+select_option:
+  service: vacuum.set_fan_speed
+  target:
+    entity_id: vacuum.roborock_s5_max
+  data:
+    fan_speed: >
+      {{ option }}

@@ -1,0 +1,6 @@
+---
+unique_id: vacuum_filter
+icon: custom:roborock-filter
+unit_of_measurement: '%'
+state: >
+  {{ (state_attr('vacuum.roborock_s5_max', 'filter_left') / 1.5) | round }}

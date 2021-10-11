@@ -1,0 +1,313 @@
+---
+button_card_templates: !include_dir_named ../templates/button-cards
+
+views:
+  - type: custom:grid-layout
+    path: home-dev
+    layout:
+      # --------
+      # Default
+      # --------
+      grid-gap: var(--custom-layout-card-padding)
+      grid-template-columns: repeat(4, 1fr) 0
+      grid-template-rows: 0 repeat(2, fit-content(100%)) 0fr
+      grid-template-areas: |
+        "sidebar  .       .       .        ."
+        "sidebar  living  alex    michael  ."
+        "sidebar  media   lights  home     ."
+        "sidebar  footer  footer  footer   ."
+      mediaquery:
+        # ------
+        # Phone
+        # ------
+        "(max-width: 800px)":
+          grid-gap: calc(var(--custom-layout-card-padding) * 1.5)
+          grid-template-columns: 0 repeat(2, 1fr) 0
+          grid-template-rows: 0 repeat(5, fit-content(100%)) 0fr
+          grid-template-areas: |
+            ".  .           .        ."
+            ".  sidebar     sidebar  ."
+            ".  living      media    ."
+            ".  alex        michael  ."
+            ".  lights      home     ."
+            ".  footer      footer   ."
+            ".  .           .        ."
+        # --------
+        # Portrait
+        # --------
+        "(max-width: 1200px)":
+          grid-gap: var(--custom-layout-card-padding)
+          grid-template-columns: repeat(3, 1fr) 0
+          grid-template-rows: 0 repeat(3, fit-content(100%)) 0fr
+          grid-template-areas: |
+            "sidebar  .           .        ."
+            "sidebar  living      media    ."
+            "sidebar  alex        michael  ."
+            "sidebar  media       home     ."
+            "sidebar  footer      footer   ."
+            "sidebar  .           .        ."
+    cards:
+
+      - type: custom:button-card # extra_styles fix
+
+      # --------
+      # Sidebar
+      # --------
+      - type: vertical-stack
+        view_layout:
+          grid-area: sidebar
+        cards:
+          - type: custom:button-card
+            entity: sensor.template_sidebar
+            template: sidebar
+
+          - type: grid
+            cards:
+              - type: button
+                icon: custom:roborock-vacuum
+                tap_action:
+                  !include panels/popups/sidebar_vacuum.yaml
+                hold_action:
+                  action: none
+
+      # -----------
+      # Living Room
+      # -----------
+      - type: grid
+        title: Living Room
+        view_layout:
+          grid-area: living
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.living_room_group
+            name: Lights
+            template:
+              - light
+              - icon_hue
+
+          - type: custom:button-card
+            entity: light.living_room_lamp
+            name: Lamp
+            template:
+              - light
+              - icon_shade
+
+          - type: custom:button-card
+            entity: media_player.shield
+            name: TV
+            state_display: >
+              [[[
+                if (variables.state == 'playing') {
+                  return 'On';
+                }
+              ]]]
+            hold_action:
+              !include panels/popups/living_room_tv.yaml
+            template:
+              - base
+              - icon_tv
+              - loader
+
+          - type: custom:button-card
+            entity: light.tv_ambilight
+            name: TV Light
+            template:
+              - light
+              - icon_shade
+
+      # ------
+      # Media
+      # ------
+      - type: grid
+        title: Media
+        view_layout:
+          grid-area: media
+        columns: 1
+        cards:
+
+          - type: custom:swipe-card
+            start_card: 1
+            parameters:
+              roundLengths: true
+              effect: coverflow
+              speed: 650
+              spaceBetween: 20
+              threshold: 7
+              coverflowEffect:
+                rotate: 80
+                depth: 300
+            cards:
+
+              - type: horizontal-stack
+                cards:
+
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.conditional_media
+                        state: Shield
+                    card:
+                      type: custom:button-card
+                      entity: media_player.shield
+                      template:
+                        - conditional_media
+                        - icon_tv
+
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.conditional_media
+                        state: Bedroom Hub
+                    card:
+                      type: custom:button-card
+                      entity: media_player.alex_s_bedroom_display
+                      template:
+                        - conditional_media
+                        - icon_tv
+
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.conditional_media
+                        state: Spotify
+                    card:
+                      type: custom:button-card
+                      entity: media_player.spotify
+                      template:
+                        - conditional_media
+                        - icon_spotify
+
+                  - type: conditional
+                    conditions:
+                      - entity: input_select.conditional_media
+                        state: Bathroom Home Mini
+                    card:
+                      type: custom:button-card
+                      entity: media_player.alexs_bathroom_speaker
+                      template:
+                        - conditional_media
+                        - icon_nest_mini
+
+              - type: grid
+                columns: 2
+                cards:
+
+                  - type: custom:button-card
+                    entity: media_player.shield
+                    name: Shield
+                    template:
+                      - media
+                      - icon_tv
+
+                  - type: custom:button-card
+                    name: Bedroom Hub
+                    entity: media_player.alex_s_bedroom_display
+                    template:
+                      - media
+                      - icon_tv
+
+                  - type: custom:button-card
+                    entity: media_player.spotify
+                    name: Spotify
+                    template:
+                      - media
+                      - icon_spotify
+
+                  - type: custom:button-card
+                    entity: media_player.alexs_bathroom_speaker
+                    name: Bathroom Home Mini
+                    template:
+                      - media
+                      - icon_nest_mini
+
+      # -----------
+      # Alex's Room
+      # -----------
+      - type: grid
+        title: Alex's Room
+        view_layout:
+          grid-area: alex
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.bedroom_dome_light_3
+            name: Overhead Light
+            template:
+              - light
+              - icon_hue
+
+          - type: custom:button-card
+            entity: media_player.alex_s_bedroom_display
+            name: "Bedroom Hub"
+            template:
+              - media
+              - icon_tv
+
+      # --------------
+      # Michael's Room
+      # --------------
+      - type: grid
+        title: Michael's Room
+        view_layout:
+          grid-area: michael
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: media_player.michaels_bathroom_speaker
+            name: Bathroom Home Mini
+            template:
+              - media
+              - icon_nest_mini
+
+      # ------
+      # Lights
+      # ------
+      - type: grid
+        title: Lights
+        view_layout:
+          grid-area: lights
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: light.living_room
+            name: Living Room
+            template:
+              - light
+              - icon_shade
+
+          - type: custom:button-card
+            entity: light.alex_bedroom
+            name: Alex's Bedroom
+            template:
+              - light
+              - icon_hue
+
+      # ----
+      # Home
+      # ----
+      - type: grid
+        title: Home
+        view_layout:
+          grid-area: home
+        columns: 2
+        cards:
+
+          - type: custom:button-card
+            entity: person.alex
+            name: Alex
+            tap_action:
+              !include popup/home_alex.yaml
+            hold_action:
+              action: none
+            template: person
+
+          - type: custom:button-card
+            entity: person.michael
+            name: Michael
+            tap_action:
+              !include popup/home_michael.yaml
+            hold_action:
+              action: none
+            template: person

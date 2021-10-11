@@ -1,0 +1,9 @@
+---
+# --------
+# Switches
+# --------
+# Loads the template switch configs
+# https://www.home-assistant.io/integrations/switch.template/
+switch:
+  - platform: template
+    switches: !include_dir_list ../entities/switches/template_switches

@@ -44,7 +44,7 @@ cloud:
 config:
 dhcp:
 frontend:
-  themes: !include_dir_named themes
+  themes: !include_dir_named themes/
 history:
 image:
 map:

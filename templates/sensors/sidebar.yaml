@@ -40,8 +40,8 @@ attributes:
     <b>
     {%- set lights = [
       states.light.bedroom_dome_light_3,
-      light.living_room_lamp,
-      light.tv_ambilight
+      states.light.living_room_lamp,
+      states.light.tv_ambilight
     ] %}
 
     {%- set switches = [

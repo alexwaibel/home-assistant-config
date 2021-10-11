@@ -40,32 +40,20 @@ attributes:
       states.switch.string_lights
     ] %}
 
-    {%- set lights_on = lights | selectattr('state','eq','on') | list %}
-    {%- set lights_name = lights | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+    {%- set on_lights = lights | selectattr('state','eq','on') | map(attribute='name') | list %}
+    {%- set on_lights_count = on_lights | length %}
+    {%- set on_switches = switches | selectattr('state','eq','on') | map(attribute='name') | list %}
+    {%- set on_switches_count = on_switches | length %}
+    {%- set on_devices_count = on_lights_count + on_switches_count %}
 
-    {%- set switches_on = switches | selectattr('state','eq','on') | list %}
-    {%- set switches_name = switches | selectattr('state','eq','on') | map(attribute='name') | join(', ') %}
+    {%- if on_devices_count == 1 -%}
+      {{ on_lights[0] or on_switches[0] }} is on
 
-    {%- if (lights_on | length == 0) and (switches_on | length > 0) -%}
-      {{ switches_name | regex_replace(',([^,]*)$',' and\\1') }} are on
+    {%- elif on_devices_count < 4 -%}
+      {{ (on_lights + on_switches) | join(', ') | regex_replace(',([^,]*)$',' and\\1') }} are on
 
-    {%- elif (lights_on | length == 1) and (switches_on | length == 1) -%}
-      {{ lights_name }} and {{switches_name }} are on
-
-    {%- elif (lights_on | length == 1) and (switches_on | length > 1) -%}
-      {{ lights_name }}, {{ switches_name | regex_replace(',([^,]*)$',' and\\1') }} are on
-
-    {%- elif (lights_on | length > 1) and (switches_on | length == 1) -%}
-      {{ lights_on | length }} lights and {{ switches_name }} are on
-
-    {%- elif (lights_on | length > 1) and (switches_on | length > 1) -%}
-      {{ lights_on | length }} lights, {{ switches_name | regex_replace(',([^,]*)$',' and\\1') }} are on
-
-    {%- elif (lights_on | length == 1) and (switches_on | length == 0) -%}
-      {{ lights_name }} are on
-
-    {%- elif (lights_on | length > 1) and (switches_on | length == 0) -%}
-      {{ lights_on | length }} lights are on
+    {%- elif on_devices_count >= 4 -%}
+      {{ on_lights_count }} light{{ 's' if on_lights_count > 1 }} and {{ on_switches_count }} switch{{ 'es' if on_switches_count > 1 }} are on
 
     {%- else %}
       <font color='#6a7377'>Everything is off</font>

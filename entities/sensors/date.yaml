@@ -1,0 +1,10 @@
+---
+# -------------
+# Time and Date
+# -------------
+# Used to show the current date and time
+# https://www.home-assistant.io/integrations/time_date/
+platform: time_date
+display_options:
+  - time
+  - date

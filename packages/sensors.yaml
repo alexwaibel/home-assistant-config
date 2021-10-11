@@ -1,0 +1,7 @@
+---
+# --------
+# Sensors
+# --------
+# Monitor state and condition of entities
+# https://www.home-assistant.io/integrations/sensor
+sensor: !include_dir_list ../entities/sensors

@@ -1,53 +1,54 @@
 ---
-show_state: true
-show_name: false
-show_icon: false
-styles:
-  state:
-    - text-align: left
-    - justify-self: left
-  card:
-    - cursor: default
-    - padding: 0
-tap_action:
-  href:
-extra_styles: |
-  #ripple {
-    display: none;
-  }
-  ha-icon {
-    width: 1.5em;
-    vertical-align: 18%;
-    opacity: 0.5;
-    padding-right: 2px;
-  }
-  .title {
-    font-family: SF Text;
-    font-size: 1.3em;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-  }
-  .subtitle {
-    font-family: SF Text;
-    font-size: 1em;
-    line-height: 0.7em;
-    padding-left: 3px;
-    padding-bottom: 10px;
-    font-weight: 500;
-    letter-spacing: 0.5px;
-    color: #828383;
-  }
-  a {
-    color: var(--primary-color);
-  }
-  ul {
-    margin-top: -0.6em;
-    font-family: SF Display;
-    font-size: 0.95em;
-    letter-spacing: 0.5px;
-    padding: 0 0 0 2.5em;
-    line-height: 1.6em;
-  }
-  code {
-    background-color: var(--secondary-background-color);
-  }
+updater:
+  show_state: true
+  show_name: false
+  show_icon: false
+  styles:
+    state:
+      - text-align: left
+      - justify-self: left
+    card:
+      - cursor: default
+      - padding: 0
+  tap_action:
+    href:
+  extra_styles: |
+    #ripple {
+      display: none;
+    }
+    ha-icon {
+      width: 1.5em;
+      vertical-align: 18%;
+      opacity: 0.5;
+      padding-right: 2px;
+    }
+    .title {
+      font-family: SF Text;
+      font-size: 1.3em;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    .subtitle {
+      font-family: SF Text;
+      font-size: 1em;
+      line-height: 0.7em;
+      padding-left: 3px;
+      padding-bottom: 10px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: #828383;
+    }
+    a {
+      color: var(--primary-color);
+    }
+    ul {
+      margin-top: -0.6em;
+      font-family: SF Display;
+      font-size: 0.95em;
+      letter-spacing: 0.5px;
+      padding: 0 0 0 2.5em;
+      line-height: 1.6em;
+    }
+    code {
+      background-color: var(--secondary-background-color);
+    }

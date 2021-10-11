@@ -1,10 +1,11 @@
 ---
-show_name: false
-color: '#9da0a2'
-styles:
-  card:
-    - color: '#9da0a2'
-    - border-radius: 0.6em
-    - width: 4em
-    - height: 3.7em
-    - background: '#FFFFFF10'
+icon_only:
+  show_name: false
+  color: '#9da0a2'
+  styles:
+    card:
+      - color: '#9da0a2'
+      - border-radius: 0.6em
+      - width: 4em
+      - height: 3.7em
+      - background: '#FFFFFF10'

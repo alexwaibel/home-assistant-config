@@ -66,7 +66,7 @@ views:
               - type: button
                 icon: custom:roborock-vacuum
                 tap_action:
-                  !include panels/popups/sidebar_vacuum.yaml
+                  !include ../panels/popups/sidebar_vacuum.yaml
                 hold_action:
                   action: none
 
@@ -104,7 +104,7 @@ views:
                 }
               ]]]
             hold_action:
-              !include panels/popups/living_room_tv.yaml
+              !include ../panels/popups/living_room_tv.yaml
             template:
               - base
               - icon_tv
@@ -298,7 +298,7 @@ views:
             entity: person.alex
             name: Alex
             tap_action:
-              !include panels/popups/home_alex.yaml
+              !include ../panels/popups/home_alex.yaml
             hold_action:
               action: none
             template: person
@@ -307,7 +307,7 @@ views:
             entity: person.michael
             name: Michael
             tap_action:
-              !include panels/popups/home_michael.yaml
+              !include ../panels/popups/home_michael.yaml
             hold_action:
               action: none
             template: person

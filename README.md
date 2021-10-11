@@ -102,6 +102,7 @@ pre-commit install
    git clone https://github.com/alexwaibel/home-assistant-config.git
    ```
 
+1. Add the font `.otf` files to `/www/fonts`
 1. Restart Home Assistant
 
 ## Contributing

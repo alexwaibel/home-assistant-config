@@ -31,3 +31,9 @@ lovelace:
       { url: "/local/custom_icons.js?v=28082021", type: module },
       { url: /local/font.css, type: css },
     ]
+  dashboards:
+    lovelace-home:
+      mode: yaml
+      title: Home
+      icon: mdi:home
+      filename: dashboards/home.yaml

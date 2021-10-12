@@ -9,7 +9,7 @@ state: >
   {% endif %}
 options: >
   {% set entity_id = 'media_player.denon_avr_s750h' %}
-  {{ (state_attr(entity_id, 'source_list')[0], state_attr(entity_id, 'source_list')[1], 'PC', 'Phono', 'PS4', 'Shield', 'Switch', 'TV Audio') | list }}
+  {{ state_attr(entity_id, 'source_list') }}
 select_option:
   service: media_player.select_source
   target:

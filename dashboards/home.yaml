@@ -128,7 +128,7 @@ views:
         cards:
 
           - type: custom:swipe-card
-            start_card: 1
+            start_card: 2
             parameters:
               roundLengths: true
               effect: coverflow

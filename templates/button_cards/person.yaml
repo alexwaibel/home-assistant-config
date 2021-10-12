@@ -3,7 +3,7 @@ template:
   - base
   - circle
 state_display: >
-  [[[ return variables.state === 'home' ? 'Yes' : 'No'; ]]]
+  [[[ return variables.state === 'home' ? 'Home' : 'Away'; ]]]
 triggers_update: sensor.time
 styles:
   custom_fields:
@@ -14,7 +14,10 @@ styles:
       - display: grid
 custom_fields:
   icon: >
-    [[[ return entity === undefined ? null : `<img src="${states[entity.entity_id].attributes.entity_picture}" width="100%">`; ]]]
+    [[[
+      const profile_pic = entity && states[entity.entity_id].attributes.entity_picture;
+      return profile_pic ? `<img src="${profile_pic}" width="100%" />` : '<ha-icon icon="mdi:account" style="width: 100%;" />';
+    ]]]
   circle: >
     [[[
       const time = c => {

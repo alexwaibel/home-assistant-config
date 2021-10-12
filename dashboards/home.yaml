@@ -206,7 +206,7 @@ views:
                       - icon_tv
 
                   - type: custom:button-card
-                    entity: media_player.spotify
+                    entity: media_player.spotify_alex_waibel
                     name: Spotify
                     template:
                       - media

@@ -10,13 +10,10 @@ attributes:
     </span>
   date: |
     <font color='#6a7377'><b>
-    {%- if strptime(states('sensor.date'), '%Y-%m-%d').day != null %}
-    {%- set days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'] %}
-    {%- set months = ['January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'] %}
-      {{- days[now().weekday()] }}<br>
-      {{- strptime(states('sensor.date'), '%Y-%m-%d').day }} {{ months[now().month-1] }}
-    {%- endif -%}
+    {% set date = strptime(states('sensor.date'), '%Y-%m-%d') %}
+    {% set suffix = 'th' if 11 <= date.day <= 13 else {1:'st', 2:'nd', 3:'rd'}.get(date.day % 10, 'th') %}
+    {{- date.strftime('%A') }}<br>
+    {{- date.strftime('%B %d') }}{{ suffix }}
     </b></font>
   greet: |
     <b>

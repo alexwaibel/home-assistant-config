@@ -1,0 +1,6 @@
+---
+platform: group
+name: Alex's Bedroom Lights
+unique_id: alex_s_bedroom_lights
+entities:
+  - light.bedroom_dome_light_3

@@ -1,0 +1,7 @@
+---
+platform: group
+name: Living Room Lights
+unique_id: living_room_lights
+entities:
+  - light.living_room_lamp
+  - light.tv_ambilight

@@ -81,8 +81,8 @@ views:
         cards:
 
           - type: custom:button-card
-            entity: light.living_room_group
-            name: Lights
+            entity: light.living_room_lights
+            name: All Lights
             template:
               - light
               - icon_hue
@@ -92,7 +92,7 @@ views:
             name: Lamp
             template:
               - light
-              - icon_shade
+              - icon_lamp
 
           - type: custom:button-card
             entity: media_player.shield
@@ -115,7 +115,7 @@ views:
             name: TV Light
             template:
               - light
-              - icon_shade
+              - icon_hue
 
       # ------
       # Media
@@ -157,7 +157,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.conditional_media
-                        state: Bedroom Hub
+                        state: Bedroom
                     card:
                       type: custom:button-card
                       entity: media_player.alex_s_bedroom_display
@@ -179,7 +179,7 @@ views:
                   - type: conditional
                     conditions:
                       - entity: input_select.conditional_media
-                        state: Bathroom Home Mini
+                        state: Bathroom
                     card:
                       type: custom:button-card
                       entity: media_player.alexs_bathroom_speaker
@@ -193,13 +193,13 @@ views:
 
                   - type: custom:button-card
                     entity: media_player.shield
-                    name: Shield
+                    name: TV
                     template:
                       - media
                       - icon_tv
 
                   - type: custom:button-card
-                    name: Bedroom Hub
+                    name: Bedroom
                     entity: media_player.alex_s_bedroom_display
                     template:
                       - media
@@ -214,7 +214,7 @@ views:
 
                   - type: custom:button-card
                     entity: media_player.alexs_bathroom_speaker
-                    name: Bathroom Home Mini
+                    name: Bathroom
                     template:
                       - media
                       - icon_nest_mini
@@ -231,14 +231,14 @@ views:
 
           - type: custom:button-card
             entity: light.bedroom_dome_light_3
-            name: Overhead Light
+            name: Overhead
             template:
               - light
               - icon_hue
 
           - type: custom:button-card
             entity: media_player.alex_s_bedroom_display
-            name: "Bedroom Hub"
+            name: "Bedroom"
             template:
               - media
               - icon_tv
@@ -255,7 +255,7 @@ views:
 
           - type: custom:button-card
             entity: media_player.michaels_bathroom_speaker
-            name: Bathroom Home Mini
+            name: Bathroom
             template:
               - media
               - icon_nest_mini
@@ -271,18 +271,18 @@ views:
         cards:
 
           - type: custom:button-card
-            entity: light.living_room
+            entity: light.living_room_lights
             name: Living Room
             template:
               - light
               - icon_shade
 
           - type: custom:button-card
-            entity: light.alex_bedroom
-            name: Alex's Bedroom
+            entity: light.alex_s_bedroom_lights
+            name: Bedroom
             template:
               - light
-              - icon_hue
+              - icon_closet
 
       # ----
       # Home

@@ -5,4 +5,5 @@
     path: kind3r/cast-and-re-cast-a-lovelace-view-to-a-google-hub.yaml
     input:
       player: media_player.alex_s_bedroom_display
-      view: default_view
+      dashboard: lovelace-home
+      view: overview

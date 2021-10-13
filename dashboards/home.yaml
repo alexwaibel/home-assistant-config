@@ -3,7 +3,7 @@ button_card_templates: !include_dir_named ../templates/button_cards
 
 views:
   - type: custom:grid-layout
-    path: home-dev
+    path: overview
     layout:
       # --------
       # Default
@@ -25,27 +25,27 @@ views:
           grid-template-columns: 0 repeat(2, 1fr) 0
           grid-template-rows: 0 repeat(5, fit-content(100%)) 0fr
           grid-template-areas: |
-            ".  .           .        ."
-            ".  sidebar     sidebar  ."
-            ".  living      media    ."
-            ".  alex        michael  ."
-            ".  lights      home     ."
-            ".  footer      footer   ."
-            ".  .           .        ."
+            ".  .        .        ."
+            ".  sidebar  sidebar  ."
+            ".  living   media    ."
+            ".  alex     michael  ."
+            ".  lights   home     ."
+            ".  footer   footer   ."
+            ".  .        .        ."
         # --------
         # Portrait
         # --------
         "(max-width: 1200px)":
           grid-gap: var(--custom-layout-card-padding)
           grid-template-columns: repeat(3, 1fr) 0
-          grid-template-rows: 0 repeat(3, fit-content(100%)) 0fr
+          grid-template-rows: 0 repeat(4, fit-content(100%)) 0fr
           grid-template-areas: |
-            "sidebar  .           .        ."
-            "sidebar  living      media    ."
-            "sidebar  alex        michael  ."
-            "sidebar  media       home     ."
-            "sidebar  footer      footer   ."
-            "sidebar  .           .        ."
+            "sidebar  .        .       ."
+            "sidebar  living   alex    ."
+            "sidebar  michael  media   ."
+            "sidebar  lights   home    ."
+            "sidebar  footer   footer  ."
+            "sidebar  .        .       ."
     cards:
 
       - type: custom:button-card # extra_styles fix

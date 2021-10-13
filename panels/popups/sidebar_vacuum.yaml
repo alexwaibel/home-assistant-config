@@ -145,9 +145,9 @@ browser_mod:
                   action: call-service
                   service: vacuum.send_command
                   service_data:
-                    entity_id: vacuum.morty
+                    entity_id: vacuum.roborock_s5_max
                     command: app_goto_target
-                    params: [16821, 23105]
+                    params: [27494, 23356]
                 template: icon_only
 
       # ----
@@ -171,3 +171,10 @@ browser_mod:
                 entity: vacuum.roborock_s5_max
                 map_camera: camera.vacuum_map
                 camera_calibration: true
+                zones:
+                  - [[30473, 22542, 33471, 28495]] # Alex's Room
+                  - [[24895, 19420, 27226, 21876]] # Bathroom
+                  - [[27643, 18795, 30598, 21959]] # Foyer
+                  - [[26269, 22001, 30515, 24915]] # Kitchen
+                  - [[21939, 25040, 29807, 29369]] # Living Room
+                  - [[22106, 21876, 25644, 24790]] # Michael's Room

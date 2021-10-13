@@ -1,0 +1,17 @@
+---
+vacuum.roborock_s5_max:
+  friendly_name: Roborock S5 Max
+  icon: custom:roborock-vacuum
+sensor.template_vacuum_filter:
+  friendly_name: Filter
+sensor.template_vacuum_mainbrush:
+  friendly_name: Main Brush
+sensor.template_vacuum_sidebrush:
+  friendly_name: Side Brush
+sensor.template_vacuum_sensors:
+  friendly_name: Sensors
+sensor.template_vacuum_lastclean:
+  friendly_name: Last Cleaned
+select.vacuum_speed:
+  friendly_name: Cleaning Mode
+  icon: mdi:format-list-bulleted

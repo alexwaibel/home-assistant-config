@@ -1,0 +1,41 @@
+---
+# --------------------------
+# Xiaomi Cloud Map Extractor
+# --------------------------
+# Presents vacuum map view without the need for root access
+# https://github.com/PiotrMachowski/Home-Assistant-custom-components-Xiaomi-Cloud-Map-Extractor
+platform: xiaomi_cloud_map_extractor
+host: !env_var ROBOROCK_ADDR
+token: !env_var ROBOROCK_TOKEN
+username: !env_var ROBOROCK_USERNAME
+password: !env_var ROBOROCK_PASSWORD
+name: vacuum_map
+colors:
+  color_robo: [224, 224, 224]
+  color_charger: [27, 117, 27]
+  color_path: [30, 80, 113]
+  color_goto_path: [30, 80, 113]
+  color_map_wall_v2: [30, 30, 30]
+  color_obstacle: [30, 30, 30]
+  color_virtual_walls: [255, 0, 0, 60]
+  color_no_go_zones_outline: [255, 0, 0, 60]
+  color_no_go_zones: [255, 0, 0, 28]
+  color_scan: [0, 0, 0, 0]
+  color_map_inside: [0, 0, 0, 0]
+  color_map_outside: [0, 0, 0, 0]
+  color_grey_wall: [0, 0, 0, 0]
+  color_map_wall: [0, 0, 0, 0]
+draw:
+  - all
+map_transformation:
+  scale: 1.5
+  trim:
+    top: 15
+    right: 15
+    bottom: 10
+    left: 15
+sizes:
+  charger_radius: 10
+  vacuum_radius: 10
+attributes:
+  - calibration_points

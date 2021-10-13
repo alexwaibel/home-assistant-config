@@ -50,7 +50,7 @@ card-mod-theme: tablet
 
 card-mod-root: |
   ha-app-layout {
-    background: url('/local/background.png');
+    background: url('/local/background.jpg');
     background-size: cover;
   }
 

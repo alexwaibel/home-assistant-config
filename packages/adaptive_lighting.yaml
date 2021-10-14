@@ -9,3 +9,4 @@ adaptive_lighting:
     - light.bedroom_dome_light_2
     - light.bedroom_dome_light_3
     - light.living_room_lamp
+    - light.tv_ambilight
